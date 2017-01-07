@@ -1,34 +1,50 @@
 # Veeqo
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/veeqo`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The Interface to the Veeqo API
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'veeqo'
+gem "veeqo", github: "abunashir/veeqo"
 ```
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install veeqo
+```sh
+bundle install
+```
 
 ## Usage
 
-TODO: Write usage instructions here
-
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+We are following Sandi Metz's Rules for this gem, you can read the
+[description of the rules here] (http://robots.thoughtbot.com/post/50655960596/sandi-metz-rules-for-developers).
+All new code should follow these rules. If you make changes in a pre-existing
+file that violates these rules you should fix the violations as part of your
+contribution.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+### Setup
+
+Clone the repository.
+
+```sh
+git clone https://github.com/abunashir/veeqo
+```
+
+Setup your environment.
+
+```sh
+bin/setup
+```
+
+Run the test suite
+
+```sh
+bin/rspec
+```
 
 ## Contributing
 
@@ -38,4 +54,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
