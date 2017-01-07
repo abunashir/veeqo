@@ -9,6 +9,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_order_create_api(order_attributes)
+    stub_api_response(
+      :post,
+      "orders",
+      status: 201,
+      filename: "order_created",
+      data: { "order": order_attributes },
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
@@ -23,8 +33,11 @@ module FakeVeeqoApi
 
   def api_request_headers(data:)
     Hash.new.tap do |request_headers|
-      request_headers[:body] = data
       request_headers[:headers] = api_key_header
+
+      unless data.nil?
+        request_headers[:body] = data.to_json
+      end
     end
   end
 

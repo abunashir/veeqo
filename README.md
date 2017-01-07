@@ -58,6 +58,71 @@ Veeqo::Order.list(
 )
 ```
 
+#### Create a new order
+
+```ruby
+# Create a new order for customer
+#
+# Please pay close attention to the argumetns construction.
+# Some attrbitues require some nested attributes, that's why
+# we've extracted those to make it easier to understand, but
+# you don't have to do it unelss you prefer a clean code :)
+
+Veeqo::Order.create(
+  channel_id: "3525",
+  customer_id: "516208",
+  delivery_method_id: "92298",
+  deliver_to_id: "1086864",
+  total_discounts: 0,
+  total_tax: 0,
+  due_date: "",
+  send_notification_email: false,
+  deliver_to_attributes: deliver_to_attributes,
+  line_items_attributes: [line_item_one_attributes]
+  payment_attributes: payment_attributes,
+)
+
+# Delivery Attributes
+#
+# This includes the details attributes to specify the
+# delivery details for that specific order.
+
+deliver_to_attributes = {
+  address1: "294 queenstown road",
+  address2: "",
+  city: "london",
+  company: "",
+  country: "GB",
+  customer_id: "516208",
+  first_name: "Sky",
+  last_name: "Schonhuber",
+  phone: "07734450718",
+  state: "london",
+  zip: "sw8 4lt",
+}
+
+# Line Item Attributes
+#
+# This includes the details about a specific
+# Line items for the new order
+
+line_item_one_attributes = {
+  price_per_unit: 13.99,
+  quantity: "1",
+  sellable_id: 1226615,
+  tax_rate: 0
+}
+
+# Payment Attributes
+#
+# Include the payment details with the order
+
+payment_attributes = {
+  payment_type: "bank_transfer",
+  reference_number: "123456789",
+}
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

@@ -22,7 +22,7 @@ module Veeqo
       RestClient::Request.execute(
         method: http_method,
         url: api_end_point,
-        payload: attributes,
+        payload: attributes.to_json,
         headers: custom_api_headers,
       )
     end
@@ -32,11 +32,18 @@ module Veeqo
     end
 
     def custom_api_headers
-      { "x-api-key" => Veeqo.configuration.api_key }
+      {
+        "content_type" => "application/json",
+        "x-api-key" => Veeqo.configuration.api_key,
+      }
     end
   end
 
   def self.get_resource(end_point, attributes = {})
     Client.new(:get, end_point, attributes).execute
+  end
+
+  def self.post_resource(end_point, attributes)
+    Client.new(:post, end_point, attributes).execute
   end
 end
