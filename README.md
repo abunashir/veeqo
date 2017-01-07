@@ -86,6 +86,31 @@ Run the test suite
 bin/rspec
 ```
 
+### Play Box
+
+The API Play Box provides an interactive console so we can easily test out the
+actual API interaction. But before moving forward let's configure the key and
+API host (In case you wanna test on a mock server).
+
+Setup the client configuration.
+
+```sh
+cp .sample.pryrc .pryrc
+vim .pryrc
+```
+
+Start the console.
+
+```sh
+bin/console
+```
+
+Start playing with it.
+
+```ruby
+Veeqo::Order.list
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/veeqo. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
