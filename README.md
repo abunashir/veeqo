@@ -41,6 +41,23 @@ Veeqo.configuration.api_key = "SECRET_API_KEY"
 
 ## Usage
 
+### Order
+
+Resources related to the orders in the API.
+
+#### List orders
+
+```ruby
+Veeqo::Order.list(
+  page: 1,
+  page_size: 25,
+  since_id: 12345,
+  status: "awaiting_fulfillment"
+  created_at_min: "2017-01-01 11:10:01",
+  updated_at_min: "2017-01-01 11:10:01",
+)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

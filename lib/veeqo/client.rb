@@ -36,7 +36,7 @@ module Veeqo
     end
   end
 
-  def self.get_resource(end_point)
-    Client.new(:get, end_point).execute
+  def self.get_resource(end_point, attributes = {})
+    Client.new(:get, end_point, attributes).execute
   end
 end
