@@ -21,6 +21,24 @@ And then execute:
 bundle install
 ```
 
+## Configure
+
+Follow [these simple steps] to get up and running with the Veeqo API. Once you
+have your API key then you can configure it by adding an initializer with the
+following code
+
+```ruby
+Veeqo.configure do |config|
+  config.api_key = "SECRET_API_KEY"
+end
+```
+
+Or
+
+```ruby
+Veeqo.configuration.api_key = "SECRET_API_KEY"
+```
+
 ## Usage
 
 ## Development
@@ -59,3 +77,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+[these simple steps]: http://docs.veeqo.apiary.io/#introduction/getting-started
