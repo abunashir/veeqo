@@ -1,5 +1,10 @@
 # Veeqo
 
+[![Build
+Status](https://travis-ci.org/abunashir/veeqo.svg?branch=master)](https://travis-ci.org/abunashir/veeqo)
+[![Code
+Climate](https://codeclimate.com/github/abunashir/veeqo/badges/gpa.svg)](https://codeclimate.com/github/abunashir/veeqo)
+
 The Interface to the Veeqo API
 
 ## Installation
