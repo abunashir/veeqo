@@ -19,5 +19,11 @@ module Veeqo
 
       Veeqo.post_resource("orders", order: required_attributes.merge(attrs))
     end
+
+    def self.update(order_id, attributes = {})
+      Veeqo.put_resource(
+        ["orders", order_id].join("/"), attributes
+      )
+    end
   end
 end

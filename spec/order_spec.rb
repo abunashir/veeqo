@@ -46,6 +46,18 @@ RSpec.describe Veeqo::Order do
     end
   end
 
+  describe ".update" do
+    it "updates the order with new attributes" do
+      order_id = 123
+      new_attributes = { number: "Inv #123" }
+
+      stub_veeqo_order_update_api(order_id, new_attributes)
+      order_update = Veeqo::Order.update(order_id, new_attributes)
+
+      expect(order_update.successful?).to be_truthy
+    end
+  end
+
   def order_attributes
     {
       channel_id: "3525",

@@ -28,6 +28,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_order_update_api(order_id, attributes)
+    stub_api_response(
+      :put,
+      ["orders", order_id].join("/"),
+      data: attributes,
+      filename: "empty",
+      status: 204,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

@@ -46,4 +46,8 @@ module Veeqo
   def self.post_resource(end_point, attributes)
     Client.new(:post, end_point, attributes).execute
   end
+
+  def self.put_resource(end_point, attributes)
+    Client.new(:put, end_point, attributes).execute
+  end
 end

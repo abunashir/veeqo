@@ -129,6 +129,12 @@ payment_attributes = {
 Veeqo::Order.find(order_id)
 ```
 
+#### Update order details
+
+```ruby
+Veeqo::Order.update(order_id, new_attributes)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

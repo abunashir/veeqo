@@ -19,6 +19,15 @@ RSpec.describe Veeqo::Client do
     end
   end
 
+  describe ".put_resource" do
+    it "submit the resource via :put" do
+      stub_put_ping_request
+      resource = Veeqo.put_resource("ping", data: "ping")
+
+      expect(resource.data).to eq("Pong!")
+    end
+  end
+
   def stub_get_ping_request
     stub_api_response(
       :get, "ping", status: 200, filename: "ping"
@@ -28,6 +37,12 @@ RSpec.describe Veeqo::Client do
   def stub_post_ping_request
     stub_api_response(
       :post, "ping", status: 200, filename: "ping", data: { data: "ping" }
+    )
+  end
+
+  def stub_put_ping_request
+    stub_api_response(
+      :put, "ping", status: 200, filename: "ping", data: { data: "ping" }
     )
   end
 end
