@@ -24,4 +24,37 @@ RSpec.describe Veeqo::Product do
       end
     end
   end
+
+  describe ".create" do
+    it "creates a new product" do
+      stub_veeqo_product_create_api(product_attributes)
+      product = Veeqo::Product.create(product_attributes)
+
+      expect(product.id).not_to be_nil
+      expect(product.title).to eq("T-Shirt")
+    end
+  end
+
+  def product_attributes
+    {
+      title: "T Shirt",
+      variants: [
+        {
+          cost_price: "10",
+          min_reorder_level: "0",
+          price: "15",
+          quantity_to_reorder: "0",
+          sku_code: "t-shirt-large",
+          tax_rate: "0",
+          title: "Large",
+        },
+      ],
+      images: [
+        {
+          display_position: "1",
+          src: "http://veeqo.com/t-shirt.jpg",
+        },
+      ],
+    }
+  end
 end

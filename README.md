@@ -153,6 +153,43 @@ Veeqo::Product.list(
 )
 ```
 
+#### Create a new product
+
+```ruby
+# Create a new product
+#
+# Pay close attension to the argument constructions. It
+# simlify the process, and the `variants` and `images`
+# supports mutiple item, and we can pass those as an
+# array, please check the example bellow for inspiration
+
+Veeqo::Product.create(
+  title: "T Shirt",
+  description: "The best t-shirt!",
+  estimated_delivery: 3,
+  notes: "This is a limited addtion!",
+  variants: [variant_one_attributes],
+  images: [image_one_attributes],
+)
+
+# Variant attributes
+variant_one_attributes = {
+  cost_price: "10",
+  min_reorder_level: "0",
+  price: "15",
+  quantity_to_reorder: "0",
+  sku_code: "t-shirt-large",
+  tax_rate: "0",
+  title: "Large",
+}
+
+# Image attributes
+image_one_attributes = {
+  display_position: "1"
+  src: "http://veeqo.com/t-shirt.jpg",
+}
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

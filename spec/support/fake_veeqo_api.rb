@@ -57,6 +57,19 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_product_create_api(attributes)
+    attributes[:product_variants_attributes] = attributes.delete(:variants)
+    attributes[:images_attributes] = attributes.delete(:images)
+
+    stub_api_response(
+      :post,
+      "products",
+      data: { product: attributes },
+      filename: "product_created",
+      status: 201,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
