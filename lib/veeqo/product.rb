@@ -27,5 +27,9 @@ module Veeqo
         ["products", product_id].join("/"), product: attributes
       )
     end
+
+    def self.delete(product_id)
+      Veeqo.delete_resource("products", product_id)
+    end
   end
 end

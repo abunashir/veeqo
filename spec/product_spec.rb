@@ -59,6 +59,16 @@ RSpec.describe Veeqo::Product do
     end
   end
 
+  describe ".delete" do
+    it "deletes the specific product" do
+      product_id = 123
+      stub_veeqo_product_delete_api(product_id)
+      product_delete = Veeqo::Product.delete(product_id)
+
+      expect(product_delete.successful?).to be_truthy
+    end
+  end
+
   def product_attributes
     {
       title: "T Shirt",

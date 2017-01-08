@@ -202,6 +202,12 @@ Veeqo::Product.find(product_id)
 Veeqo::Product.update(product_id, new_attributes)
 ```
 
+#### Delete a product
+
+```ruby
+Veeqo::Product.delete(product_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
