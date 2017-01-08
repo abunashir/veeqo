@@ -76,6 +76,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_product_update_api(product_id, new_attributes)
+    stub_api_response(
+      :put,
+      ["products", product_id].join("/"),
+      data: { product: new_attributes },
+      filename: "empty",
+      status: 204,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

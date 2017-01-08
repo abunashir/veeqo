@@ -21,5 +21,11 @@ module Veeqo
         "products", product: required_attributes.merge(attributes)
       )
     end
+
+    def self.update(product_id, attributes)
+      Veeqo.put_resource(
+        ["products", product_id].join("/"), product: attributes
+      )
+    end
   end
 end

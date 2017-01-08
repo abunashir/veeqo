@@ -47,6 +47,18 @@ RSpec.describe Veeqo::Product do
     end
   end
 
+  describe ".update" do
+    it "updates the product with new attributes" do
+      product_id = 123
+      new_attributes = { title: "Best T Shirt" }
+
+      stub_veeqo_product_update_api(product_id, new_attributes)
+      product_update = Veeqo::Product.update(product_id, new_attributes)
+
+      expect(product_update.successful?).to be_truthy
+    end
+  end
+
   def product_attributes
     {
       title: "T Shirt",

@@ -196,6 +196,12 @@ image_one_attributes = {
 Veeqo::Product.find(product_id)
 ```
 
+#### Update product details
+
+```ruby
+Veeqo::Product.update(product_id, new_attributes)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
