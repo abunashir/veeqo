@@ -135,6 +135,12 @@ Veeqo::Order.find(order_id)
 Veeqo::Order.update(order_id, new_attributes)
 ```
 
+#### Delete an order
+
+```ruby
+Veeqo::Order.delete(order_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

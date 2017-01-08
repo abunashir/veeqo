@@ -25,6 +25,16 @@ RSpec.describe Veeqo::Order do
     end
   end
 
+  describe ".find" do
+    it "retrieves a specific order" do
+      order_id = 123
+      stub_veeqo_order_find_api(order_id)
+      order = Veeqo::Order.find(order_id)
+
+      expect(order.number).not_to be_nil
+    end
+  end
+
   describe ".create" do
     it "creates a new order" do
       stub_veeqo_order_create_api(order_attributes)
@@ -33,16 +43,6 @@ RSpec.describe Veeqo::Order do
       expect(order.id).not_to be_nil
       expect(order.deliver_to.first_name).to eq("Sky")
       expect(order.payment.payment_type).not_to be_nil
-    end
-  end
-
-  describe ".find" do
-    it "retrieves a specific order" do
-      order_id = 123
-      stub_veeqo_order_find_api(order_id)
-      order = Veeqo::Order.find(order_id)
-
-      expect(order.number).not_to be_nil
     end
   end
 
@@ -55,6 +55,16 @@ RSpec.describe Veeqo::Order do
       order_update = Veeqo::Order.update(order_id, new_attributes)
 
       expect(order_update.successful?).to be_truthy
+    end
+  end
+
+  describe ".delete" do
+    it "deletes a specific order" do
+      order_id = 123
+      stub_veeqo_order_delete_api(order_id)
+      order_delete = Veeqo::Order.delete(order_id)
+
+      expect(order_delete.successful?).to be_truthy
     end
   end
 

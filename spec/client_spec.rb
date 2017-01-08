@@ -28,6 +28,15 @@ RSpec.describe Veeqo::Client do
     end
   end
 
+  describe ".delete_resource" do
+    it "submits the requests via :delete" do
+      stub_delete_ping_request
+      resource = Veeqo.delete_resource("ping", 1)
+
+      expect(resource.successful?).to be_truthy
+    end
+  end
+
   def stub_get_ping_request
     stub_api_response(
       :get, "ping", status: 200, filename: "ping"
@@ -43,6 +52,12 @@ RSpec.describe Veeqo::Client do
   def stub_put_ping_request
     stub_api_response(
       :put, "ping", status: 200, filename: "ping", data: { data: "ping" }
+    )
+  end
+
+  def stub_delete_ping_request
+    stub_api_response(
+      :delete, "ping/1", status: 204, filename: "empty"
     )
   end
 end

@@ -50,4 +50,8 @@ module Veeqo
   def self.put_resource(end_point, attributes)
     Client.new(:put, end_point, attributes).execute
   end
+
+  def self.delete_resource(end_point, resource_id)
+    Client.new(:delete, [end_point, resource_id].join("/")).execute
+  end
 end
