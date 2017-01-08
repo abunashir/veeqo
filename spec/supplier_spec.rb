@@ -59,4 +59,15 @@ RSpec.describe Veeqo::Supplier do
       expect(supplier_update.successful?).to be_truthy
     end
   end
+
+  describe ".delete" do
+    it "deletes the specified supplier" do
+      supplier_id = 123
+
+      stub_veeqo_supplier_delete_api(supplier_id)
+      supplier_delete = Veeqo::Supplier.delete(supplier_id)
+
+      expect(supplier_delete.successful?).to be_truthy
+    end
+  end
 end

@@ -29,5 +29,9 @@ module Veeqo
         [end_point, resource_id].join("/"), attributes
       )
     end
+
+    def delete_resource(resource_id)
+      Veeqo.delete_resource(end_point, resource_id)
+    end
   end
 end

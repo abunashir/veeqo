@@ -138,6 +138,12 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_supplier_delete_api(id)
+    stub_api_response(
+      :delete, ["suppliers", id].join("/"), status: 204, filename: "empty"
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
