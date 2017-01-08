@@ -7,5 +7,11 @@ module Veeqo
         super
       end
     end
+
+    private
+
+    def list_resource(filters)
+      Veeqo.get_resource(end_point, filters)
+    end
   end
 end

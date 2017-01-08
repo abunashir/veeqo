@@ -220,6 +220,16 @@ Veeqo::PurchaseOrder.list(
 )
 ```
 
+### Suppliers
+
+Resources related to the suppliers in the API.
+
+#### List all suppliers
+
+```ruby
+Veeqo::Supplier.list(page: 1, page_size: 12)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
