@@ -1,13 +1,11 @@
 module Veeqo
   class Product < Base
     def list(filters = {})
-      Veeqo.get_resource("products", filters)
+      list_resource(filters)
     end
 
     def find(product_id)
-      Veeqo.get_resource(
-        ["products", product_id].join("/"),
-      )
+      find_resource(product_id)
     end
 
     def create(title:, variants:, images: [], **attributes)
@@ -17,19 +15,21 @@ module Veeqo
         images_attributes: images,
       }
 
-      Veeqo.post_resource(
-        "products", product: required_attributes.merge(attributes)
-      )
+      create_resource(product: required_attributes.merge(attributes))
     end
 
     def update(product_id, attributes)
-      Veeqo.put_resource(
-        ["products", product_id].join("/"), product: attributes
-      )
+      update_resource(product_id, product: attributes)
     end
 
     def delete(product_id)
-      Veeqo.delete_resource("products", product_id)
+      delete_resource(product_id)
+    end
+
+    private
+
+    def end_point
+      "products"
     end
   end
 end

@@ -1,33 +1,35 @@
 module Veeqo
   class Order < Base
     def list(filters = {})
-      Veeqo.get_resource("orders", filters)
+      list_resource(filters)
     end
 
     def find(order_id)
-      Veeqo.get_resource(
-        ["orders", order_id].join("/"),
-      )
+      find_resource(order_id)
     end
 
-    def create(channel_id:, customer_id:, delivery_method_id:, **attrs)
+    def create(channel_id:, customer_id:, delivery_method_id:, **attributes)
       required_attributes = {
         channel_id: channel_id,
         customer_id: customer_id,
         delivery_method_id: delivery_method_id,
       }
 
-      Veeqo.post_resource("orders", order: required_attributes.merge(attrs))
+      create_resource(order: required_attributes.merge(attributes))
     end
 
     def update(order_id, attributes = {})
-      Veeqo.put_resource(
-        ["orders", order_id].join("/"), attributes
-      )
+      update_resource(order_id, attributes)
     end
 
     def delete(order_id)
-      Veeqo.delete_resource("orders", order_id)
+      delete_resource(order_id)
+    end
+
+    private
+
+    def end_point
+      "orders"
     end
   end
 end

@@ -1,7 +1,13 @@
 module Veeqo
   class PurchaseOrder < Base
     def list(filters = {})
-      Veeqo.get_resource("purchase_orders", filters)
+      list_resource(filters)
+    end
+
+    private
+
+    def end_point
+      "purchase_orders"
     end
   end
 end
