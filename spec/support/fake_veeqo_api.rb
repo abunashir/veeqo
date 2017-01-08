@@ -47,6 +47,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_product_list_api(filters = {})
+    stub_api_response(
+      :get,
+      "products",
+      data: filters,
+      filename: "products",
+      status: 200,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

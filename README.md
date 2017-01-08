@@ -141,6 +141,18 @@ Veeqo::Order.update(order_id, new_attributes)
 Veeqo::Order.delete(order_id)
 ```
 
+### Product
+
+Resources related to the products in the API.
+
+#### List all products
+
+```ruby
+Veeqo::Product.list(
+  since_id: 123_45, page: 1, page_size: 12
+)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
