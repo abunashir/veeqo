@@ -190,6 +190,12 @@ image_one_attributes = {
 }
 ```
 
+#### View a product details
+
+```ruby
+Veeqo::Product.find(product_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

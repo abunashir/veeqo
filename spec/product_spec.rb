@@ -25,6 +25,18 @@ RSpec.describe Veeqo::Product do
     end
   end
 
+  describe ".find" do
+    it "retrieves the specific product" do
+      product_id = 123
+
+      stub_veeqo_product_find_api(product_id)
+      product = Veeqo::Product.find(product_id)
+
+      expect(product.id).to eq(product_id)
+      expect(product.title).not_to be_nil
+    end
+  end
+
   describe ".create" do
     it "creates a new product" do
       stub_veeqo_product_create_api(product_attributes)

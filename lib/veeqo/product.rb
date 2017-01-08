@@ -4,6 +4,12 @@ module Veeqo
       Veeqo.get_resource("products", filters)
     end
 
+    def self.find(product_id)
+      Veeqo.get_resource(
+        ["products", product_id].join("/"),
+      )
+    end
+
     def self.create(title:, variants:, images: [], **attributes)
       required_attributes = {
         title: title,
