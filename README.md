@@ -208,6 +208,18 @@ Veeqo::Product.update(product_id, new_attributes)
 Veeqo::Product.delete(product_id)
 ```
 
+### Purchase Orders
+
+Resources related to the purchase orders in the API.
+
+#### List purchase orders
+
+```ruby
+Veeqo::PurchaseOrder.list(
+  page: 1, page_size: 12, show_complete: false
+)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
