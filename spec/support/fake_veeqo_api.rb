@@ -122,6 +122,12 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_supplier_find_api(id)
+    stub_api_response(
+      :get, ["suppliers", id].join("/"), status: 200, filename: "supplier"
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

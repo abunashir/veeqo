@@ -236,6 +236,12 @@ Veeqo::Supplier.list(page: 1, page_size: 12)
 Veeqo::Supplier.create(name: "ACME")
 ```
 
+#### View a supplier details
+
+```ruby
+Veeqo::Supplier.find(supplier_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
