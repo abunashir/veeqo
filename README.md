@@ -230,6 +230,12 @@ Resources related to the suppliers in the API.
 Veeqo::Supplier.list(page: 1, page_size: 12)
 ```
 
+#### Create a new supplier
+
+```ruby
+Veeqo::Supplier.create(name: "ACME")
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

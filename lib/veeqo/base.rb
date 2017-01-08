@@ -13,5 +13,9 @@ module Veeqo
     def list_resource(filters)
       Veeqo.get_resource(end_point, filters)
     end
+
+    def create_resource(attributes)
+      Veeqo.post_resource(end_point, attributes)
+    end
   end
 end

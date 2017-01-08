@@ -23,4 +23,15 @@ RSpec.describe Veeqo::Supplier do
       end
     end
   end
+
+  describe ".create" do
+    it "creates a new supplier" do
+      supplier_attributes = { name: "ACME" }
+      stub_veeqo_supplier_create_api(supplier_attributes)
+      supplier = Veeqo::Supplier.create(supplier_attributes)
+
+      expect(supplier.id).not_to be_nil
+      expect(supplier.name).to eq(supplier_attributes[:name])
+    end
+  end
 end

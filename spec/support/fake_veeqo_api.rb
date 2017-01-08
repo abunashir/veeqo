@@ -112,6 +112,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_supplier_create_api(attributes)
+    stub_api_response(
+      :post,
+      "suppliers",
+      data: attributes,
+      status: 201,
+      filename: "supplier_created",
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
