@@ -9,6 +9,15 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_order_find_api(order_id)
+    stub_api_response(
+      :get,
+      ["orders", order_id].join("/"),
+      filename: "order",
+      status: 200,
+    )
+  end
+
   def stub_veeqo_order_create_api(order_attributes)
     stub_api_response(
       :post,

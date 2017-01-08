@@ -36,6 +36,16 @@ RSpec.describe Veeqo::Order do
     end
   end
 
+  describe ".find" do
+    it "retrieves a specific order" do
+      order_id = 123
+      stub_veeqo_order_find_api(order_id)
+      order = Veeqo::Order.find(order_id)
+
+      expect(order.number).not_to be_nil
+    end
+  end
+
   def order_attributes
     {
       channel_id: "3525",

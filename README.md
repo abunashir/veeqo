@@ -123,6 +123,12 @@ payment_attributes = {
 }
 ```
 
+#### View an order details
+
+```ruby
+Veeqo::Order.find(order_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

@@ -4,6 +4,12 @@ module Veeqo
       Veeqo.get_resource("orders", filters)
     end
 
+    def self.find(order_id)
+      Veeqo.get_resource(
+        ["orders", order_id].join("/"),
+      )
+    end
+
     def self.create(channel_id:, customer_id:, delivery_method_id:, **attrs)
       required_attributes = {
         channel_id: channel_id,
