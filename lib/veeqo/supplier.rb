@@ -12,6 +12,10 @@ module Veeqo
       create_resource(name: name)
     end
 
+    def update(supplier_id, attributes)
+      update_resource(supplier_id, attributes)
+    end
+
     private
 
     def end_point

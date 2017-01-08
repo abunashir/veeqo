@@ -23,5 +23,11 @@ module Veeqo
     def create_resource(attributes)
       Veeqo.post_resource(end_point, attributes)
     end
+
+    def update_resource(resource_id, attributes)
+      Veeqo.put_resource(
+        [end_point, resource_id].join("/"), attributes
+      )
+    end
   end
 end

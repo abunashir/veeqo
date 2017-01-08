@@ -47,4 +47,16 @@ RSpec.describe Veeqo::Supplier do
       expect(supplier.name).to eq(supplier_attributes[:name])
     end
   end
+
+  describe ".update" do
+    it "updates the supplier with new attributes" do
+      supplier_id = 123
+      new_attributes = { name: "ACME" }
+
+      stub_veeqo_supplier_update_api(supplier_id, new_attributes)
+      supplier_update = Veeqo::Supplier.update(supplier_id, new_attributes)
+
+      expect(supplier_update.successful?).to be_truthy
+    end
+  end
 end

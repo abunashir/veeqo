@@ -242,6 +242,12 @@ Veeqo::Supplier.create(name: "ACME")
 Veeqo::Supplier.find(supplier_id)
 ```
 
+#### Update a supplier details
+
+```ruby
+Veeqo::Supplier.update(supplier_id, new_attributes_hash)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
