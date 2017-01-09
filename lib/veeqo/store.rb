@@ -7,6 +7,10 @@ module Veeqo
       create_resource(name: name, type_code: type_code)
     end
 
+    def update(store_id, attributes)
+      update_resource(store_id, attributes)
+    end
+
     private
 
     def end_point

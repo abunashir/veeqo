@@ -35,4 +35,16 @@ RSpec.describe Veeqo::Store do
       expect(store.name).to eq(store_attributes[:name])
     end
   end
+
+  describe ".update" do
+    it "updates the store with new attributes" do
+      store_id = 123
+      new_attributes = { name: "Phone" }
+
+      stub_veeqo_store_update_api(store_id, new_attributes)
+      store_update = Veeqo::Store.update(store_id, new_attributes)
+
+      expect(store_update.successful?).to be_truthy
+    end
+  end
 end

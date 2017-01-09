@@ -375,6 +375,12 @@ Veeqo::Store.create(name: "Phone", type_code: "direct")
 Veeqo::Store.find(store_id)
 ```
 
+#### Update a store details
+
+```ruby
+Veeqo::Store.update(store_id, new_attributes_hash)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
