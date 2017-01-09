@@ -270,6 +270,16 @@ Veeqo::Company.find
 Veeqo::Company.update(new_attributes_hash)
 ```
 
+### Warehouses
+
+Resources related to the warehouses in the API.
+
+#### List all warehouses
+
+```ruby
+Veeqo::Warehouse.list(page: 1, page_size: 12)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

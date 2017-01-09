@@ -5,6 +5,7 @@ require "veeqo/order"
 require "veeqo/company"
 require "veeqo/product"
 require "veeqo/supplier"
+require "veeqo/warehouse"
 require "veeqo/purchase_order"
 
 module Veeqo
