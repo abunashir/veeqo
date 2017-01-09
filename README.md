@@ -369,6 +369,12 @@ Veeqo::Store.list(page: 1, page_size: 12)
 Veeqo::Store.create(name: "Phone", type_code: "direct")
 ```
 
+#### View a store details
+
+```ruby
+Veeqo::Store.find(store_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

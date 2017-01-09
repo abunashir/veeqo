@@ -248,6 +248,12 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_store_find_api(id)
+    stub_api_response(
+      :get, ["channels", id].join("/"), filename: "store", status: 200
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

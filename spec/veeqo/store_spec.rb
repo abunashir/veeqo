@@ -13,6 +13,17 @@ RSpec.describe Veeqo::Store do
     end
   end
 
+  describe ".find" do
+    it "retrieves the details for a store" do
+      store_id = 123
+
+      stub_veeqo_store_find_api(store_id)
+      store = Veeqo::Store.find(store_id)
+
+      expect(store.name).not_to be_nil
+    end
+  end
+
   describe ".create" do
     it "creates a new store" do
       store_attributes = { name: "Phone", type_code: "direct" }
