@@ -1,10 +1,7 @@
 module Veeqo
   class Product < Base
     include Veeqo::Actions::List
-
-    def find(product_id)
-      find_resource(product_id)
-    end
+    include Veeqo::Actions::Find
 
     def create(title:, variants:, images: [], **attributes)
       required_attributes = {

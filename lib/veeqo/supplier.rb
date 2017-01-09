@@ -1,10 +1,7 @@
 module Veeqo
   class Supplier < Base
     include Veeqo::Actions::List
-
-    def find(supplier_id)
-      find_resource(supplier_id)
-    end
+    include Veeqo::Actions::Find
 
     def create(name:)
       create_resource(name: name)

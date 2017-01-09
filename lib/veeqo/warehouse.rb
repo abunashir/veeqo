@@ -1,10 +1,7 @@
 module Veeqo
   class Warehouse < Base
     include Veeqo::Actions::List
-
-    def find(warehouse_id)
-      find_resource(warehouse_id)
-    end
+    include Veeqo::Actions::Find
 
     def create(name:)
       create_resource(name: name)

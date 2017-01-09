@@ -1,10 +1,7 @@
 module Veeqo
   class Order < Base
     include Veeqo::Actions::List
-
-    def find(order_id)
-      find_resource(order_id)
-    end
+    include Veeqo::Actions::Find
 
     def create(channel_id:, customer_id:, delivery_method_id:, **attributes)
       required_attributes = {

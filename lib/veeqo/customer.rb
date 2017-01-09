@@ -1,10 +1,7 @@
 module Veeqo
   class Customer < Base
     include Veeqo::Actions::List
-
-    def find(customer_id)
-      find_resource(customer_id)
-    end
+    include Veeqo::Actions::Find
 
     def create(email:, **attributes)
       required_attributes = { email: email }
