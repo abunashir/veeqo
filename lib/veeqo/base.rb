@@ -1,5 +1,6 @@
 require "veeqo/actions/list"
 require "veeqo/actions/find"
+require "veeqo/actions/delete"
 
 module Veeqo
   class Base

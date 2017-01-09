@@ -2,6 +2,7 @@ module Veeqo
   class Order < Base
     include Veeqo::Actions::List
     include Veeqo::Actions::Find
+    include Veeqo::Actions::Delete
 
     def create(channel_id:, customer_id:, delivery_method_id:, **attributes)
       required_attributes = {
@@ -15,10 +16,6 @@ module Veeqo
 
     def update(order_id, attributes = {})
       update_resource(order_id, attributes)
-    end
-
-    def delete(order_id)
-      delete_resource(order_id)
     end
 
     private

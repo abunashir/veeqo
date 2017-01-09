@@ -2,6 +2,7 @@ module Veeqo
   class Warehouse < Base
     include Veeqo::Actions::List
     include Veeqo::Actions::Find
+    include Veeqo::Actions::Delete
 
     def create(name:)
       create_resource(name: name)
@@ -9,10 +10,6 @@ module Veeqo
 
     def update(warehouse_id, attributes)
       update_resource(warehouse_id, attributes)
-    end
-
-    def delete(warehouse_id)
-      delete_resource(warehouse_id)
     end
 
     private

@@ -2,6 +2,7 @@ module Veeqo
   class Product < Base
     include Veeqo::Actions::List
     include Veeqo::Actions::Find
+    include Veeqo::Actions::Delete
 
     def create(title:, variants:, images: [], **attributes)
       required_attributes = {
@@ -15,10 +16,6 @@ module Veeqo
 
     def update(product_id, attributes)
       update_resource(product_id, product: attributes)
-    end
-
-    def delete(product_id)
-      delete_resource(product_id)
     end
 
     private

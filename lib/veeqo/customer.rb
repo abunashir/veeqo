@@ -2,6 +2,7 @@ module Veeqo
   class Customer < Base
     include Veeqo::Actions::List
     include Veeqo::Actions::Find
+    include Veeqo::Actions::Delete
 
     def create(email:, **attributes)
       required_attributes = { email: email }
@@ -14,10 +15,6 @@ module Veeqo
       update_resource(
         customer_id, customer: required_attributes.merge(attributes)
       )
-    end
-
-    def delete(customer_id)
-      delete_resource(customer_id)
     end
 
     private
