@@ -4,6 +4,10 @@ module Veeqo
       list_resource(filters)
     end
 
+    def find(warehouse_id)
+      find_resource(warehouse_id)
+    end
+
     def create(name:)
       create_resource(name: name)
     end

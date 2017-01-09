@@ -167,8 +167,14 @@ module FakeVeeqoApi
       :post,
       "warehouses",
       data: attributes,
-      status: 200,
+      status: 201,
       filename: "warehouse_created",
+    )
+  end
+
+  def stub_veeqo_warehouse_find_api(id)
+    stub_api_response(
+      :get, ["warehouses", id].join("/"), filename: "warehouse", status: 200
     )
   end
 

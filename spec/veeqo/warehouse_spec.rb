@@ -25,6 +25,17 @@ RSpec.describe Veeqo::Warehouse do
     end
   end
 
+  describe ".find" do
+    it "retrieves the specific warehouse details" do
+      warehouse_id = 123
+
+      stub_veeqo_warehouse_find_api(warehouse_id)
+      warehouse = Veeqo::Warehouse.find(warehouse_id)
+
+      expect(warehouse.name).not_to be_nil
+    end
+  end
+
   describe ".create" do
     it "creates a new warehouse" do
       warehouse_attributes = { name: "My Warehouse" }

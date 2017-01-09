@@ -286,6 +286,12 @@ Veeqo::Warehouse.list(page: 1, page_size: 12)
 Veeqo::Warehouse.create(name: "My Warehouse")
 ```
 
+#### View a warehouse details
+
+```ruby
+Veeqo::Warehouse.find(warehouse_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
