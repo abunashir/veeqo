@@ -381,6 +381,12 @@ Veeqo::Store.find(store_id)
 Veeqo::Store.update(store_id, new_attributes_hash)
 ```
 
+#### Delete a store
+
+```ruby
+Veeqo::Store.delete(store_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

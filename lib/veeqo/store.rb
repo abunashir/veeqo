@@ -1,7 +1,6 @@
 module Veeqo
   class Store < Base
-    include Veeqo::Actions::List
-    include Veeqo::Actions::Find
+    include Veeqo::Actions::Base
 
     def create(name:, type_code:)
       create_resource(name: name, type_code: type_code)
