@@ -26,6 +26,18 @@ RSpec.describe Veeqo::Customer do
     end
   end
 
+  describe ".find" do
+    it "retrives the details for a customer" do
+      customer_id = 123
+
+      stub_veeqo_customer_find_api(customer_id)
+      customer = Veeqo::Customer.find(customer_id)
+
+      expect(customer.id).to eq(123)
+      expect(customer.email).not_to be_nil
+    end
+  end
+
   describe ".create" do
     it "creates a new customer" do
       stub_veeqo_customer_create_api(customer_attributes)

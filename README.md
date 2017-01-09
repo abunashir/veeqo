@@ -333,6 +333,12 @@ Veeqo::Customer.create(
 )
 ```
 
+#### View a customer details
+
+```ruby
+Veeqo::Customer.find(customer_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

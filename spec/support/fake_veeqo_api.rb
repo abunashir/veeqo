@@ -200,6 +200,12 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_customer_find_api(id)
+    stub_api_response(
+      :get, ["customers", id].join("/"), filename: "customer", status: 200
+    )
+  end
+
   def stub_veeqo_customer_create_api(attributes)
     stub_api_response(
       :post,
