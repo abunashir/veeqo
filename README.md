@@ -264,6 +264,12 @@ Information about current company
 Veeqo::Company.find
 ```
 
+#### Update company details
+
+```ruby
+Veeqo::Company.update(new_attributes_hash)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

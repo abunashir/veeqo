@@ -4,6 +4,10 @@ module Veeqo
       Veeqo.get_resource(end_point)
     end
 
+    def update(attributes)
+      Veeqo.put_resource(end_point, attributes)
+    end
+
     private
 
     def end_point

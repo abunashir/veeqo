@@ -150,6 +150,12 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_company_update_api(attributes)
+    stub_api_response(
+      :put, "current_company", data: attributes, filename: "empty", status: 204
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
