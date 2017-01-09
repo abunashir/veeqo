@@ -24,4 +24,16 @@ RSpec.describe Veeqo::Warehouse do
       end
     end
   end
+
+  describe ".create" do
+    it "creates a new warehouse" do
+      warehouse_attributes = { name: "My Warehouse" }
+
+      stub_veeqo_warehouse_create_api(warehouse_attributes)
+      warehouse = Veeqo::Warehouse.create(warehouse_attributes)
+
+      expect(warehouse.id).not_to be_nil
+      expect(warehouse.name).to eq(warehouse_attributes[:name])
+    end
+  end
 end

@@ -280,6 +280,12 @@ Resources related to the warehouses in the API.
 Veeqo::Warehouse.list(page: 1, page_size: 12)
 ```
 
+#### Create a new warehouse
+
+```ruby
+Veeqo::Warehouse.create(name: "My Warehouse")
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

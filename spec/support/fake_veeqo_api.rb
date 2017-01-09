@@ -162,6 +162,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_warehouse_create_api(attributes)
+    stub_api_response(
+      :post,
+      "warehouses",
+      data: attributes,
+      status: 200,
+      filename: "warehouse_created",
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
