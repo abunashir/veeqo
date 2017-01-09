@@ -1,0 +1,15 @@
+{
+  "id": 123,
+  "email": "customer@example.com",
+  "phone": "01792 720740",
+  "mobile": "07329023903",
+  "billing_address_attributes": {
+    "first_name": "Foo",
+    "last_name": "Bar",
+    "address1": "FooBar Lane",
+    "address2": "",
+    "city": "Swansea",
+    "country": "GB",
+    "zip": "SA1 1NW"
+  }
+}

@@ -314,6 +314,25 @@ Resources related to the customers in the API.
 Veeqo::Customer.list(page: 1, page_size: 12)
 ```
 
+#### Create a customer
+
+```ruby
+Veeqo::Customer.create(
+  email: "customer@example.com",
+  phone: "01792 720740",
+  mobile: "07329023903",
+  billing_address: {
+    first_name: "John",
+    last_name: "Doe",
+    company: "FooBar Ltd",
+    address1: "221 High Street Lane",
+    city: "Swansea",
+    country: "GB",
+    zip: "SA1 1NW",
+  }
+)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

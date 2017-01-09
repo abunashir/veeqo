@@ -200,6 +200,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_customer_create_api(attributes)
+    stub_api_response(
+      :post,
+      "customers",
+      data: { customer: attributes },
+      filename: "customer_created",
+      status: 201,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
