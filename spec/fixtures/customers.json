@@ -1,0 +1,38 @@
+[
+  {
+    "id": 123,
+    "email": "customer@example.com",
+    "phone": "01792 720740",
+    "mobile": "07329023903",
+    "created_by_id": 1602,
+    "billing_address": {
+      "id": 142,
+      "first_name": "John",
+      "last_name": "Doe",
+      "company": "",
+      "address1": "221 High Street Lane",
+      "address2": "Braithwell",
+      "city": "Swansea",
+      "country": "GB",
+      "state": "",
+      "zip": "SA1 1NW",
+      "phone": "",
+      "email": "customer@example.com"
+    },
+    "shipping_addresses": [
+      {
+        "id": 11731634,
+        "first_name": "John",
+        "last_name": "Doe",
+        "company": "",
+        "address1": "224 West Lane",
+        "address2": "Braithwell",
+        "city": "Swansea",
+        "country": "GB",
+        "state": "",
+        "zip": "SA1 1DP",
+        "phone": ""
+      }
+    ]
+  }
+]

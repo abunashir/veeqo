@@ -295,14 +295,24 @@ Veeqo::Warehouse.find(warehouse_id)
 #### Update a warehouse details
 
 ```ruby
-Veeqo::Warehouse.delete(warehouse_id)
-```
-
-```ruby
 Veeqo::Warehouse.update(warehouse_id, new_attributes_hash)
 ```
 
 #### Delete a warehouse
+
+```ruby
+Veeqo::Warehouse.delete(warehouse_id)
+```
+
+### Customer
+
+Resources related to the customers in the API.
+
+#### List all customers
+
+```ruby
+Veeqo::Customer.list(page: 1, page_size: 12)
+```
 
 ## Development
 
