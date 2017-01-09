@@ -1,8 +1,6 @@
 module Veeqo
   class Order < Base
-    def list(filters = {})
-      list_resource(filters)
-    end
+    include Veeqo::Actions::List
 
     def find(order_id)
       find_resource(order_id)

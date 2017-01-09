@@ -1,8 +1,6 @@
 module Veeqo
   class PurchaseOrder < Base
-    def list(filters = {})
-      list_resource(filters)
-    end
+    include Veeqo::Actions::List
 
     private
 

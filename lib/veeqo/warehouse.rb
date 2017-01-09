@@ -1,8 +1,6 @@
 module Veeqo
   class Warehouse < Base
-    def list(filters = {})
-      list_resource(filters)
-    end
+    include Veeqo::Actions::List
 
     def find(warehouse_id)
       find_resource(warehouse_id)

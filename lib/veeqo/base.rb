@@ -1,3 +1,5 @@
+require "veeqo/actions/list"
+
 module Veeqo
   class Base
     def self.method_missing(method_name, *arguments, &block)

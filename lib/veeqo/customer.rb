@@ -1,8 +1,6 @@
 module Veeqo
   class Customer < Base
-    def list(filters = {})
-      list_resource(filters)
-    end
+    include Veeqo::Actions::List
 
     def find(customer_id)
       find_resource(customer_id)
