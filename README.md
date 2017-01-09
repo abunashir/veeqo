@@ -363,6 +363,12 @@ Resources related to the stores in the API.
 Veeqo::Store.list(page: 1, page_size: 12)
 ```
 
+#### Create a new store
+
+```ruby
+Veeqo::Store.create(name: "Phone", type_code: "direct")
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

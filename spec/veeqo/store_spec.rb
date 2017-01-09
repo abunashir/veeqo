@@ -12,4 +12,16 @@ RSpec.describe Veeqo::Store do
       expect(stores.first.id).to eq(123)
     end
   end
+
+  describe ".create" do
+    it "creates a new store" do
+      store_attributes = { name: "Phone", type_code: "direct" }
+
+      stub_veeqo_store_create_api(store_attributes)
+      store = Veeqo::Store.create(store_attributes)
+
+      expect(store.id).not_to be_nil
+      expect(store.name).to eq(store_attributes[:name])
+    end
+  end
 end

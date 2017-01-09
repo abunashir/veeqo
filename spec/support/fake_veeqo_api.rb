@@ -238,6 +238,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_store_create_api(attributes)
+    stub_api_response(
+      :post,
+      "channels",
+      data: attributes,
+      filename: "store_created",
+      status: 201,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
