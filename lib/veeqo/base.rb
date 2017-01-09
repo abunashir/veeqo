@@ -14,16 +14,6 @@ module Veeqo
 
     private
 
-    def list_resource(filters)
-      Veeqo.get_resource(end_point, filters)
-    end
-
-    def find_resource(resource_id)
-      Veeqo.get_resource(
-        [end_point, resource_id].join("/"),
-      )
-    end
-
     def create_resource(attributes)
       Veeqo.post_resource(end_point, attributes)
     end
@@ -32,10 +22,6 @@ module Veeqo
       Veeqo.put_resource(
         [end_point, resource_id].join("/"), attributes
       )
-    end
-
-    def delete_resource(resource_id)
-      Veeqo.delete_resource(end_point, resource_id)
     end
   end
 end
