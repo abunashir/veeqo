@@ -144,6 +144,12 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_company_find_api
+    stub_api_response(
+      :get, "current_company", status: 200, filename: "company"
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

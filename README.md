@@ -254,6 +254,16 @@ Veeqo::Supplier.update(supplier_id, new_attributes_hash)
 Veeqo::Supplier.delete(supplier_id)
 ```
 
+### Company
+
+Information about current company
+
+#### View company details
+
+```ruby
+Veeqo::Company.find
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
