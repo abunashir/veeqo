@@ -270,7 +270,7 @@ Veeqo::Company.find
 Veeqo::Company.update(new_attributes_hash)
 ```
 
-### Warehouses
+### Warehouse
 
 Resources related to the warehouses in the API.
 
@@ -351,6 +351,16 @@ Veeqo::Customer.update(
 
 ```ruby
 Veeqo::Customer.delete(customer_id)
+```
+
+### Store
+
+Resources related to the stores in the API.
+
+#### List all stores
+
+```ruby
+Veeqo::Store.list(page: 1, page_size: 12)
 ```
 
 ## Development
