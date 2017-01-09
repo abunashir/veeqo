@@ -21,6 +21,10 @@ module Veeqo
       )
     end
 
+    def delete(customer_id)
+      delete_resource(customer_id)
+    end
+
     private
 
     def end_point

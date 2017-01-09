@@ -347,6 +347,12 @@ Veeqo::Customer.update(
 )
 ```
 
+#### Delete a customer
+
+```ruby
+Veeqo::Customer.delete(customer_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

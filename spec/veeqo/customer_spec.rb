@@ -60,6 +60,17 @@ RSpec.describe Veeqo::Customer do
     end
   end
 
+  describe ".delete" do
+    it "deletes the specified customer" do
+      customer_id = 123
+
+      stub_veeqo_customer_delete_api(customer_id)
+      customer_deletion = Veeqo::Customer.delete(customer_id)
+
+      expect(customer_deletion.successful?).to be_truthy
+    end
+  end
+
   def customer_attributes
     {
       email: "customer@example.com",
