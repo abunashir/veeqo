@@ -48,6 +48,18 @@ RSpec.describe Veeqo::Customer do
     end
   end
 
+  describe ".update" do
+    it "updates the customer with new attributes" do
+      customer_id = 123
+      new_attributes = { email: "customer@example.com" }
+
+      stub_veeqo_customer_update_api(customer_id, new_attributes)
+      customer_update = Veeqo::Customer.update(customer_id, new_attributes)
+
+      expect(customer_update.successful?).to be_truthy
+    end
+  end
+
   def customer_attributes
     {
       email: "customer@example.com",

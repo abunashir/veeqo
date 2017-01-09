@@ -339,6 +339,14 @@ Veeqo::Customer.create(
 Veeqo::Customer.find(customer_id)
 ```
 
+#### Update a customer details
+
+```ruby
+Veeqo::Customer.update(
+  customer_id, new_attributes_hash
+)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

@@ -13,6 +13,14 @@ module Veeqo
       create_resource(customer: required_attributes.merge(attributes))
     end
 
+    def update(customer_id, email:, **attributes)
+      required_attributes = { email: email }
+
+      update_resource(
+        customer_id, customer: required_attributes.merge(attributes)
+      )
+    end
+
     private
 
     def end_point
