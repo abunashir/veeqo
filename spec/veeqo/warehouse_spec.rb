@@ -47,4 +47,16 @@ RSpec.describe Veeqo::Warehouse do
       expect(warehouse.name).to eq(warehouse_attributes[:name])
     end
   end
+
+  describe ".update" do
+    it "updates a warehouse with new attributes" do
+      warehouse_id = 123
+      new_attributes = { name: "My Warehouse" }
+
+      stub_veeqo_warehouse_update_api(warehouse_id, new_attributes)
+      warehouse_update = Veeqo::Warehouse.update(warehouse_id, new_attributes)
+
+      expect(warehouse_update.successful?).to be_truthy
+    end
+  end
 end

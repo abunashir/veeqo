@@ -292,6 +292,12 @@ Veeqo::Warehouse.create(name: "My Warehouse")
 Veeqo::Warehouse.find(warehouse_id)
 ```
 
+#### Update warehouse details
+
+```ruby
+Veeqo::Warehouse.update(warehouse_id, new_attributes_hash)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

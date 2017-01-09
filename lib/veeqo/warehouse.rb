@@ -12,6 +12,10 @@ module Veeqo
       create_resource(name: name)
     end
 
+    def update(warehouse_id, attributes)
+      update_resource(warehouse_id, attributes)
+    end
+
     private
 
     def end_point

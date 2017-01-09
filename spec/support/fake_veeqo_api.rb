@@ -178,6 +178,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_warehouse_update_api(id, attributes)
+    stub_api_response(
+      :put,
+      ["warehouses", id].join("/"),
+      data: attributes,
+      filename: "empty",
+      status: 204,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
