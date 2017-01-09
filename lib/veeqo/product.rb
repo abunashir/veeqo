@@ -1,8 +1,6 @@
 module Veeqo
   class Product < Base
-    include Veeqo::Actions::List
-    include Veeqo::Actions::Find
-    include Veeqo::Actions::Delete
+    include Veeqo::Actions::Base
 
     def create(title:, variants:, images: [], **attributes)
       required_attributes = {

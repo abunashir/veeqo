@@ -1,8 +1,6 @@
 module Veeqo
   class Warehouse < Base
-    include Veeqo::Actions::List
-    include Veeqo::Actions::Find
-    include Veeqo::Actions::Delete
+    include Veeqo::Actions::Base
 
     def create(name:)
       create_resource(name: name)

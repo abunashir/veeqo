@@ -1,8 +1,6 @@
 module Veeqo
   class Customer < Base
-    include Veeqo::Actions::List
-    include Veeqo::Actions::Find
-    include Veeqo::Actions::Delete
+    include Veeqo::Actions::Base
 
     def create(email:, **attributes)
       required_attributes = { email: email }

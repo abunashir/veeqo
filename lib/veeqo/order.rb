@@ -1,8 +1,6 @@
 module Veeqo
   class Order < Base
-    include Veeqo::Actions::List
-    include Veeqo::Actions::Find
-    include Veeqo::Actions::Delete
+    include Veeqo::Actions::Base
 
     def create(channel_id:, customer_id:, delivery_method_id:, **attributes)
       required_attributes = {
