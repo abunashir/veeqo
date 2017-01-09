@@ -16,6 +16,10 @@ module Veeqo
       update_resource(warehouse_id, attributes)
     end
 
+    def delete(warehouse_id)
+      delete_resource(warehouse_id)
+    end
+
     private
 
     def end_point

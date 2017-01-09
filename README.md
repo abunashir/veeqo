@@ -292,11 +292,17 @@ Veeqo::Warehouse.create(name: "My Warehouse")
 Veeqo::Warehouse.find(warehouse_id)
 ```
 
-#### Update warehouse details
+#### Update a warehouse details
+
+```ruby
+Veeqo::Warehouse.delete(warehouse_id)
+```
 
 ```ruby
 Veeqo::Warehouse.update(warehouse_id, new_attributes_hash)
 ```
+
+#### Delete a warehouse
 
 ## Development
 

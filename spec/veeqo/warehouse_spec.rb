@@ -59,4 +59,15 @@ RSpec.describe Veeqo::Warehouse do
       expect(warehouse_update.successful?).to be_truthy
     end
   end
+
+  describe ".delete" do
+    it "deletes the specified warehouse" do
+      warehouse_id = 123
+
+      stub_veeqo_warehouse_delete_api(warehouse_id)
+      warehouse_deletion = Veeqo::Warehouse.delete(warehouse_id)
+
+      expect(warehouse_deletion.successful?).to be_truthy
+    end
+  end
 end
