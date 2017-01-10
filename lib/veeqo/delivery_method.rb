@@ -1,7 +1,6 @@
 module Veeqo
   class DeliveryMethod < Base
-    include Veeqo::Actions::List
-    include Veeqo::Actions::Find
+    include Veeqo::Actions::Base
 
     def create(name:)
       create_resource(name: name)

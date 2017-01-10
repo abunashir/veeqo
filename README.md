@@ -415,6 +415,12 @@ Veeqo::DeliveryMethod.find(delivery_method_id)
 Veeqo::DeliveryMethod.update(delivery_method_id, new_attributes_hash)
 ```
 
+#### Delete a delivery method
+
+```ruby
+Veeqo::DeliveryMethod.delete(delivery_method_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

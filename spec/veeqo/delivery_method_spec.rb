@@ -49,4 +49,17 @@ RSpec.describe Veeqo::DeliveryMethod do
       expect(delivery_method_update.successful?).to be_truthy
     end
   end
+
+  describe ".delete" do
+    it "deletes a specific delivery method" do
+      delivery_method_id = 123
+
+      stub_veeqo_delivery_method_delete_api(delivery_method_id)
+      delivery_method_deletion = Veeqo::DeliveryMethod.delete(
+        delivery_method_id,
+      )
+
+      expect(delivery_method_deletion.successful?).to be_truthy
+    end
+  end
 end
