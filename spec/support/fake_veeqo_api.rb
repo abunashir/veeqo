@@ -280,6 +280,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_delivery_method_create_api(attributes)
+    stub_api_response(
+      :post,
+      "delivery_methods",
+      data: attributes,
+      filename: "delivery_method_created",
+      status: 201,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

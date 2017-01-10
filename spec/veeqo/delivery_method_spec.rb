@@ -12,4 +12,16 @@ RSpec.describe Veeqo::DeliveryMethod do
       expect(delivery_methods.first.id).not_to be_nil
     end
   end
+
+  describe ".create" do
+    it "creates a new deliver method" do
+      attributes = { name: "Next Day Delivery" }
+
+      stub_veeqo_delivery_method_create_api(attributes)
+      delivery_method = Veeqo::DeliveryMethod.create(attributes)
+
+      expect(delivery_method.id).not_to be_nil
+      expect(delivery_method.name).to eq(attributes[:name])
+    end
+  end
 end

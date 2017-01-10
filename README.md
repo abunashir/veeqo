@@ -397,6 +397,12 @@ Resources related to the delivery methods in the API
 Veeqo::DeliveryMethod.list(page: 1, page_size: 12)
 ```
 
+#### Create a delivery method
+
+```ruby
+Veeqo::DeliveryMethod.create(name: "Next Day Delivery")
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
