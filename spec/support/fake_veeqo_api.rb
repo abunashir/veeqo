@@ -299,6 +299,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_delivery_method_update_api(id, attributes)
+    stub_api_response(
+      :put,
+      ["delivery_methods", id].join("/"),
+      data: attributes,
+      filename: "empty",
+      status: 204,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

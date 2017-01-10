@@ -35,4 +35,18 @@ RSpec.describe Veeqo::DeliveryMethod do
       expect(delivery_method.name).to eq(attributes[:name])
     end
   end
+
+  describe ".update" do
+    it "updates a delivery method with new attributes" do
+      delivery_method_id = 123
+      new_attributes = { name: "Next Day Delivery" }
+
+      stub_veeqo_delivery_method_update_api(delivery_method_id, new_attributes)
+      delivery_method_update = Veeqo::DeliveryMethod.update(
+        delivery_method_id, new_attributes
+      )
+
+      expect(delivery_method_update.successful?).to be_truthy
+    end
+  end
 end

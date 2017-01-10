@@ -409,6 +409,12 @@ Veeqo::DeliveryMethod.create(name: "Next Day Delivery")
 Veeqo::DeliveryMethod.find(delivery_method_id)
 ```
 
+#### Update a delivery method
+
+```ruby
+Veeqo::DeliveryMethod.update(delivery_method_id, new_attributes_hash)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
