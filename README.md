@@ -51,8 +51,8 @@ Resources related to the orders in the API.
 Veeqo::Order.list(
   page: 1,
   page_size: 25,
-  since_id: 12345,
-  status: "awaiting_fulfillment"
+  since_id: since_id,
+  status: "awaiting_fulfillment",
   created_at_min: "2017-01-01 11:10:01",
   updated_at_min: "2017-01-01 11:10:01",
 )
@@ -69,10 +69,10 @@ Veeqo::Order.list(
 # you don't have to do it unelss you prefer a clean code :)
 
 Veeqo::Order.create(
-  channel_id: "3525",
-  customer_id: "516208",
-  delivery_method_id: "92298",
-  deliver_to_id: "1086864",
+  channel_id: store_id,
+  customer_id: customer_id,
+  delivery_method_id: deliver_method_id,
+  deliver_to_id: deliver_to_id,
   total_discounts: 0,
   total_tax: 0,
   due_date: "",
@@ -93,7 +93,7 @@ deliver_to_attributes = {
   city: "london",
   company: "",
   country: "GB",
-  customer_id: "516208",
+  customer_id: customer_id,
   first_name: "Sky",
   last_name: "Schonhuber",
   phone: "07734450718",
@@ -321,7 +321,7 @@ Veeqo::Customer.create(
   email: "customer@example.com",
   phone: "01792 720740",
   mobile: "07329023903",
-  billing_address: {
+  billing_address_attributes: {
     first_name: "John",
     last_name: "Doe",
     company: "FooBar Ltd",
@@ -509,7 +509,7 @@ Veeqo::Order.list
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/veeqo. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/abunashir/veeqo. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
