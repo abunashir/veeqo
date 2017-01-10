@@ -9,6 +9,7 @@ require "veeqo/customer"
 require "veeqo/supplier"
 require "veeqo/warehouse"
 require "veeqo/purchase_order"
+require "veeqo/delivery_method"
 
 module Veeqo
 end

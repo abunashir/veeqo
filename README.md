@@ -387,6 +387,16 @@ Veeqo::Store.update(store_id, new_attributes_hash)
 Veeqo::Store.delete(store_id)
 ```
 
+### Delivery Method
+
+Resources related to the delivery methods in the API
+
+#### List all delivery methods
+
+```ruby
+Veeqo::DeliveryMethod.list(page: 1, page_size: 12)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
