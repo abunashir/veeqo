@@ -1,0 +1,19 @@
+{
+  "id": 3,
+  "created_at": "2016-11-14T15:05:35.709Z",
+  "allocation_id": 1,
+  "carrier_id": 3,
+  "shipped_by_id": 1402,
+  "weight": 20,
+  "notify_customer": false,
+  "update_remote_order": false,
+  "tracking_number": {
+    "id": 12618396,
+    "tracking_number": " 12345679ABC"
+  },
+  "order_id": 1,
+  "carrier": {
+    "id": 3,
+    "name": "Other"
+  }
+}

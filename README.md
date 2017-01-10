@@ -421,6 +421,33 @@ Veeqo::DeliveryMethod.update(delivery_method_id, new_attributes_hash)
 Veeqo::DeliveryMethod.delete(delivery_method_id)
 ```
 
+### Shipment
+
+Information about creating shipments in the API. Please follow the [shipment doc]
+regarding the `carrier_id` or other details.
+
+#### Create a shipment
+
+```ruby
+# Create a new shipment
+#
+# Please pay close attention to the construciton of
+# the arugments, This simplified some attrbitues, so
+# the developer does not need to worry about the too
+# much details on how it needs to structured.
+
+Veeqo::Shipment.create(
+  order_id: 1,
+  allocation_id: 1,
+  shipment: {
+    carrier_id: 3,
+    notify_customer: false,
+    update_remote_order: false,
+    tracking_number: "12345679ABC",
+  },
+)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the
@@ -484,3 +511,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 [these simple steps]: http://docs.veeqo.apiary.io/#introduction/getting-started
+[shipment doc]: http://docs.veeqo.apiary.io/#reference/shipments

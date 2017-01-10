@@ -318,6 +318,20 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_shipment_create_api(attributes)
+    attributes[:shipment][:tracking_number_attributes] = {
+      tracking_number: attributes[:shipment].delete(:tracking_number),
+    }
+
+    stub_api_response(
+      :post,
+      "shipments",
+      data: attributes,
+      filename: "shipment_created",
+      status: 201,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

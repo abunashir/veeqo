@@ -8,6 +8,7 @@ require "veeqo/product"
 require "veeqo/customer"
 require "veeqo/supplier"
 require "veeqo/warehouse"
+require "veeqo/shipment"
 require "veeqo/purchase_order"
 require "veeqo/delivery_method"
 
