@@ -12,6 +12,17 @@ RSpec.describe Veeqo::Shipment do
     end
   end
 
+  describe ".delete" do
+    it "deletes a spcified shipment" do
+      shipment_id = 123
+
+      stub_veeqo_shipment_delete_api(shipment_id)
+      shipment_deletion = Veeqo::Shipment.delete(shipment_id)
+
+      expect(shipment_deletion.successful?).to be_truthy
+    end
+  end
+
   def shipment_attributes
     {
       order_id: 1,

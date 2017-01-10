@@ -448,6 +448,12 @@ Veeqo::Shipment.create(
 )
 ```
 
+#### Delete a shipment
+
+```ruby
+Veeqo::Shipment.delete(shipment_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

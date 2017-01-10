@@ -1,5 +1,7 @@
 module Veeqo
   class Shipment < Base
+    include Veeqo::Actions::Delete
+
     def create(order_id:, allocation_id:, shipment:)
       create_resource(
         order_id: order_id,
