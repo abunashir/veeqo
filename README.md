@@ -403,6 +403,12 @@ Veeqo::DeliveryMethod.list(page: 1, page_size: 12)
 Veeqo::DeliveryMethod.create(name: "Next Day Delivery")
 ```
 
+#### View a delivery method details
+
+```ruby
+Veeqo::DeliveryMethod.find(delivery_method_id)
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this gem, you can read the

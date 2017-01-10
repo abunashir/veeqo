@@ -13,6 +13,17 @@ RSpec.describe Veeqo::DeliveryMethod do
     end
   end
 
+  describe ".find" do
+    it "retrieves the details for a delivery method" do
+      delivery_method_id = 123
+
+      stub_veeqo_delivery_method_find_api(delivery_method_id)
+      delivery_method = Veeqo::DeliveryMethod.find(delivery_method_id)
+
+      expect(delivery_method.name).not_to be_nil
+    end
+  end
+
   describe ".create" do
     it "creates a new deliver method" do
       attributes = { name: "Next Day Delivery" }

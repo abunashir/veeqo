@@ -290,6 +290,15 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_delivery_method_find_api(id)
+    stub_api_response(
+      :get,
+      ["delivery_methods", id].join("/"),
+      filename: "delivery_method",
+      status: 200,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
