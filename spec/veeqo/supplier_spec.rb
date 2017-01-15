@@ -2,26 +2,14 @@ require "spec_helper"
 
 RSpec.describe Veeqo::Supplier do
   describe ".list" do
-    context "without any filter params" do
-      it "retrieves the list of suppliers" do
-        stub_veeqo_supplier_list_api
-        suppliers = Veeqo::Supplier.list
+    it "retrieves the list of suppliers" do
+      filters = { page: 1, page_size: 12 }
 
-        expect(suppliers.count).to eq(1)
-        expect(suppliers.first.id).not_to be_nil
-      end
-    end
+      stub_veeqo_supplier_list_api(filters)
+      suppliers = Veeqo::Supplier.list(filters)
 
-    context "with additional filters" do
-      it "retrives the spcified suppliers" do
-        filters = { page: 1, page_size: 12 }
-
-        stub_veeqo_supplier_list_api(filters)
-        suppliers = Veeqo::Supplier.list(filters)
-
-        expect(suppliers.count).to eq(1)
-        expect(suppliers.first.id).not_to be_nil
-      end
+      expect(suppliers.count).to eq(1)
+      expect(suppliers.first.id).not_to be_nil
     end
   end
 
