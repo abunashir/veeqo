@@ -141,6 +141,25 @@ Veeqo::Order.update(order_id, new_attributes)
 Veeqo::Order.delete(order_id)
 ```
 
+### Allocation
+
+Resources related to the allocations in the API. This allocates a set of stock
+item to a specific order. To allocate stock to an order, the item must be added
+as a line item within that order and not be allocated already.
+
+#### Create a new allocation
+
+```ruby
+Veeqo::Allocation.create(
+  order_id: 123_456,
+  warehouse_id: 456_789,
+  line_items: [{
+    quantity: 1,
+    sellable_id: 123_456,
+  }],
+)
+```
+
 ### Product
 
 Resources related to the products in the API.

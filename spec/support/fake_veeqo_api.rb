@@ -338,6 +338,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_allocation_create_api(order_id:, warehouse_id:, line_items:)
+    stub_api_response(
+      :post,
+      ["orders", order_id, "allocations"].join("/"),
+      data: { warehouse_id: warehouse_id, line_items_attributes: line_items },
+      filename: "allocation_created",
+      status: 201,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
