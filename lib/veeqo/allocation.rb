@@ -8,6 +8,14 @@ module Veeqo
       )
     end
 
+    def update(allocation_id, order_id:, line_items:, **attributes)
+      @order_id = order_id
+      update_resource(
+        allocation_id,
+        attributes.merge(line_items_attributes: line_items),
+      )
+    end
+
     private
 
     def end_point

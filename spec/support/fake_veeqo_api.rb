@@ -348,6 +348,16 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_allocation_update_api(id, order_id:, line_items:, **attrs)
+    stub_api_response(
+      :put,
+      ["orders", order_id, "allocations", id].compact.join("/"),
+      data: attrs.merge(line_items_attributes: line_items),
+      filename: "empty",
+      status: 204,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

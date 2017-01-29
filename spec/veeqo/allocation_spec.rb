@@ -11,6 +11,19 @@ RSpec.describe Veeqo::Allocation do
     end
   end
 
+  describe ".update" do
+    it "updates an existing allocation" do
+      allocation_id = 123_456
+
+      stub_veeqo_allocation_update_api(allocation_id, allocation_attributes)
+      allocation_update = Veeqo::Allocation.update(
+        allocation_id, allocation_attributes
+      )
+
+      expect(allocation_update.successful?).to be_truthy
+    end
+  end
+
   def allocation_attributes
     {
       order_id: 447452,

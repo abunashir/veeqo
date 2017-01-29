@@ -160,6 +160,20 @@ Veeqo::Allocation.create(
 )
 ```
 
+#### Update a allocation details
+
+```ruby
+Veeqo::Allocation.update(
+  allocation_id,
+  order_id: 123_456,
+  warehouse_id: 456_789,
+  line_items: [{
+    quantity: 2,
+    sellable_id: 123_456,
+  }],
+)
+```
+
 ### Product
 
 Resources related to the products in the API.
