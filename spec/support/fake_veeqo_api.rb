@@ -358,6 +358,15 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_allocation_delete_api(order_id, allocation_id)
+    stub_api_response(
+      :delete,
+      ["orders", order_id, "allocations", allocation_id].join("/"),
+      filename: "empty",
+      status: 204,
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)

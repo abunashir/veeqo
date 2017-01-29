@@ -174,6 +174,12 @@ Veeqo::Allocation.update(
 )
 ```
 
+#### Delete an existing allocation
+
+```ruby
+Veeqo::Allocation.delete(order_id, allocation_id)
+```
+
 ### Product
 
 Resources related to the products in the API.

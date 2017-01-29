@@ -24,6 +24,18 @@ RSpec.describe Veeqo::Allocation do
     end
   end
 
+  describe ".delete" do
+    it "deletes the specified allocation" do
+      order_id = 123_456
+      allocation_id = 456_789
+
+      stub_veeqo_allocation_delete_api(order_id, allocation_id)
+      allocation_delete = Veeqo::Allocation.delete(order_id, allocation_id)
+
+      expect(allocation_delete.successful?).to be_truthy
+    end
+  end
+
   def allocation_attributes
     {
       order_id: 447452,
