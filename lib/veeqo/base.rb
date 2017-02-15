@@ -1,3 +1,4 @@
+require "veeqo/request"
 require "veeqo/actions/base"
 
 module Veeqo
@@ -13,13 +14,13 @@ module Veeqo
     private
 
     def create_resource(attributes)
-      Veeqo.post_resource(end_point, attributes)
+      Veeqo::Request.new(:post, end_point, attributes).run
     end
 
     def update_resource(resource_id, attributes)
-      Veeqo.put_resource(
-        [end_point, resource_id].join("/"), attributes
-      )
+      Veeqo::Request.new(
+        :put, [end_point, resource_id].join("/"), attributes
+      ).run
     end
   end
 end

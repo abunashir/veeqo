@@ -1,11 +1,11 @@
 module Veeqo
   class Company < Base
     def find
-      Veeqo.get_resource(end_point)
+      Veeqo::Request.new(:get, end_point).run
     end
 
     def update(attributes)
-      Veeqo.put_resource(end_point, attributes)
+      Veeqo::Request.new(:put, end_point, attributes).run
     end
 
     private

@@ -16,8 +16,6 @@ module Veeqo
 
     private
 
-    attr_reader :http_method, :attributes
-
     def send_http_request
       Net::HTTP.start(*net_http_options) do |http|
         http.request(build_net_http_request)
@@ -43,32 +41,16 @@ module Veeqo
     end
 
     def constantize_net_http_class
-      Object.const_get("Net::HTTP::#{http_method.to_s.capitalize}")
+      Object.const_get("Net::HTTP::#{@http_method.to_s.capitalize}")
     end
 
     def set_request_body!(request)
-      request.body = attributes.to_json
+      request.body = @attributes.to_json
     end
 
     def set_request_headers!(request)
-      request.initialize_http_header "Content-Type" => "application/json"
-      request.initialize_http_header "x-api-key" => Veeqo.configuration.api_key
+      request.initialize_http_header("Content-Type" => "application/json")
+      request.initialize_http_header("x-api-key" => Veeqo.configuration.api_key)
     end
-  end
-
-  def self.get_resource(end_point, attributes = {})
-    Request.new(:get, end_point, attributes).run
-  end
-
-  def self.post_resource(end_point, attributes)
-    Request.new(:post, end_point, attributes).run
-  end
-
-  def self.put_resource(end_point, attributes)
-    Request.new(:put, end_point, attributes).run
-  end
-
-  def self.delete_resource(end_point, resource_id)
-    Request.new(:delete, [end_point, resource_id].join("/")).run
   end
 end
