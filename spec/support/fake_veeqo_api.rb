@@ -1,3 +1,5 @@
+require "uri"
+
 module FakeVeeqoApi
   def stub_veeqo_order_list_api(filters = nil)
     stub_api_response(
@@ -376,7 +378,7 @@ module FakeVeeqoApi
   end
 
   def api_end_point(end_point)
-    [Veeqo.configuration.api_host, end_point].join("/")
+    URI::HTTPS.build(host: Veeqo.configuration.api_host, path: "/#{end_point}")
   end
 
   def api_request_headers(data:)

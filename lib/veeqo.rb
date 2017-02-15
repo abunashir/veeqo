@@ -1,5 +1,5 @@
 require "veeqo/version"
-require "veeqo/client"
+require "veeqo/request"
 require "veeqo/base"
 require "veeqo/order"
 require "veeqo/store"

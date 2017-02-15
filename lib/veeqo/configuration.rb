@@ -3,7 +3,7 @@ module Veeqo
     attr_accessor :api_host, :api_key
 
     def initialize
-      @api_host ||= "https://api.veeqo.com"
+      @api_host ||= "api.veeqo.com"
     end
   end
 

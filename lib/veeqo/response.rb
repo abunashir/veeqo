@@ -10,20 +10,18 @@ module Veeqo
 
     def parse
       parse_response_content
-    rescue JSON::ParserError => error
-      ResponseObject.new(error: error, content: "")
     end
 
     private
 
     def parse_response_content
-      if response.code == 204
-        ResponseObject.new(successful?: true, content: "")
-      else
-        JSON.parse(response, object_class: ResponseObject)
-      end
+      JSON.parse(response.body || "{}", object_class: ResponseObject)
     end
   end
 
-  class ResponseObject < OpenStruct; end
+  class ResponseObject < OpenStruct
+    def successful?
+      true
+    end
+  end
 end

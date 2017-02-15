@@ -3,7 +3,7 @@ require "spec_helper"
 RSpec.describe Veeqo::Configuration do
   describe ".configuration" do
     it "returns the client configuration object" do
-      veeqo_api_host = "https://api.veeqo.com"
+      veeqo_api_host = "api.veeqo.com"
       configuration = Veeqo.configuration
 
       expect(configuration.api_host).to eq(veeqo_api_host)

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Veeqo::Client do
+RSpec.describe Veeqo::Request do
   describe ".get_resource" do
     it "retrieve the resource via :get" do
       stub_get_ping_request
@@ -51,7 +51,7 @@ RSpec.describe Veeqo::Client do
 
   def stub_put_ping_request
     stub_api_response(
-      :put, "ping", status: 200, filename: "ping", data: { data: "ping" }
+      :put, "ping", status: 204, filename: "ping", data: { data: "ping" }
     )
   end
 
