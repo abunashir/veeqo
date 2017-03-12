@@ -14,13 +14,13 @@ module Veeqo
     private
 
     def create_resource(attributes)
-      Veeqo::Request.new(:post, end_point, attributes).run
+      Veeqo::Request.new(:post, end_point, attributes).parse
     end
 
     def update_resource(resource_id, attributes)
       Veeqo::Request.new(
         :put, [end_point, resource_id].join("/"), attributes
-      ).run
+      ).parse
     end
   end
 end

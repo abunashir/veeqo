@@ -2,9 +2,18 @@ require "spec_helper"
 
 RSpec.describe Veeqo::Request do
   describe "#run" do
-    it "retrieves the parsed resource in specified http verb" do
+    it "executes the http request with specified verb" do
       stub_ping_request_via_get
       response = Veeqo::Request.new(:get, "ping").run
+
+      expect(response.code.to_i).to eq(200)
+    end
+  end
+
+  describe "#parse" do
+    it "runs the request and parse the response" do
+      stub_ping_request_via_get
+      response = Veeqo::Request.new(:get, "ping").parse
 
       expect(response.data).to eq("Pong!")
     end
