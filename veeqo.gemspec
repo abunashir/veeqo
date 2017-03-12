@@ -9,17 +9,14 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Abu Nashir"]
   spec.email         = ["abunashir@gmail.com"]
 
-  spec.summary       = %q{The Interface to the Veeqo API}
-  spec.description   = %q{The Interface to the Veeqo API}
+  spec.summary       = %q{The Ruby Interface to the Veeqo API}
+  spec.description   = %q{The Ruby Interface to the Veeqo API}
   spec.homepage      = "https://www.veeqo.com/"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+  spec.files         = `git ls-files`.split("\n")
+  spec.test_files    = `git ls-files -- {spec}/*`.split("\n")
 
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
