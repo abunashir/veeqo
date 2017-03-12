@@ -1,4 +1,5 @@
 require "net/http"
+require "veeqo/errors"
 require "veeqo/response"
 require "veeqo/configuration"
 
@@ -11,7 +12,7 @@ module Veeqo
     end
 
     def run
-      send_http_request
+      valid_response || raise_response_error
     end
 
     def parse
@@ -19,6 +20,26 @@ module Veeqo
     end
 
     private
+
+    def valid_response
+      if valid_response?
+        response
+      end
+    end
+
+    def raise_response_error
+      raise response_error
+    end
+
+    def valid_response?
+      response.is_a?(Net::HTTPSuccess)
+    end
+
+    def response
+      @response ||= send_http_request
+    rescue *server_errors => error
+      @response ||= error
+    end
 
     def send_http_request
       Net::HTTP.start(*net_http_options) do |http|
@@ -55,6 +76,14 @@ module Veeqo
     def set_request_headers!(request)
       request.initialize_http_header("Content-Type" => "application/json")
       request.initialize_http_header("x-api-key" => Veeqo.configuration.api_key)
+    end
+
+    def server_errors
+      Veeqo::Errors.server_errors
+    end
+
+    def response_error
+      Veeqo::Errors.error_klass_for(response)
     end
   end
 end
