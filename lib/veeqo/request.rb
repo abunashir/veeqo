@@ -74,8 +74,10 @@ module Veeqo
     end
 
     def set_request_headers!(request)
-      request.initialize_http_header("Content-Type" => "application/json")
-      request.initialize_http_header("x-api-key" => Veeqo.configuration.api_key)
+      request.initialize_http_header(
+        "Content-Type" => "application/json",
+        "x-api-key" => Veeqo.configuration.api_key,
+      )
     end
 
     def server_errors

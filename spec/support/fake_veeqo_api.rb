@@ -392,7 +392,10 @@ module FakeVeeqoApi
   end
 
   def api_key_header
-    { "x-api-key" => Veeqo.configuration.api_key }
+    {
+      "content-type" => "application/json",
+      "x-api-key" => Veeqo.configuration.api_key,
+    }
   end
 
   def response_with(filename:, status:)
