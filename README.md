@@ -489,6 +489,16 @@ Veeqo::Shipment.create(
 )
 ```
 
+### Tags
+
+Resources related to the order tags in the API.
+
+#### List All Tags
+
+```ruby
+Veeqo::Tag.list
+```
+
 #### Delete a shipment
 
 ```ruby

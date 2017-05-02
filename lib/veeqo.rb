@@ -11,6 +11,7 @@ require "veeqo/customer"
 require "veeqo/store"
 require "veeqo/delivery_method"
 require "veeqo/shipment"
+require "veeqo/tag"
 
 module Veeqo
 end

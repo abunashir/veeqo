@@ -369,6 +369,12 @@ module FakeVeeqoApi
     )
   end
 
+  def stub_veeqo_tag_list_api
+    stub_api_response(
+      :get, "tags", filename: "tags", status: 200
+    )
+  end
+
   private
 
   def stub_api_response(method, end_point, filename:, status:, data: nil)
